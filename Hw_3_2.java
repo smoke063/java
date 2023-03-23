@@ -1,8 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Hw_3_2 {
 
@@ -19,9 +15,9 @@ public class Hw_3_2 {
         return goods;
     }
 
-    public ArrayList<String> getNameOfMinGoodsBySort(int sort) {
+   /* public ArrayList<String> getNameOfMinGoodsBySort(int sort) {
         ArrayList<Good> goods = this.getGoodList();
         Map<Integer, List<Good>> groups = goods.stream().filter(x -> x.sort == sort).collect(Collectors.groupingBy(Good::getSort));
         return groups.values().stream().min(Comparator.comparing(Good::getPrice)).get().stream().map(x -> x.getName());
-    }
+    }*/
 }
