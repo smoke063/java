@@ -3,38 +3,28 @@ package oop_6.data;
 import java.time.LocalDate;
 
 public class Student extends User implements Comparable<Student> {
-    private Long studentId;
 
     public Student(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
         super(firstName, secondName, patronymic, dateOfBirth);
     }
 
     public Student(String firstName, String secondName, String patronymic, LocalDate dateOfBirth, Long studentId) {
-        super(firstName, secondName, patronymic, dateOfBirth);
-        this.studentId = studentId;
-    }
-
-    public Long getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+        // можно переиспользовать конструкторы текущего класса.
+        this(firstName, secondName, patronymic, dateOfBirth);
+        this.setId(studentId);
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "studentId='" + studentId + '\'' +
-                ", firstName='" + super.getFirstName() + '\'' +
-                ", secondName='" + super.getSecondName() + '\'' +
-                ", patronymic='" + super.getPatronymic() + '\'' +
-                ", dateOfBirth=" + super.getDateOfBirth() +
+        return "Student {" +
+                "studentId='" + this.getId() + '\'' +
+                // Можно просто вызвать метод родителя принцип DRY
+                super.toString() +
                 '}';
     }
 
     @Override
     public int compareTo(Student o) {
-        return this.studentId.compareTo(o.studentId);
+        return this.getId().compareTo(o.getId());
     }
 }

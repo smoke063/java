@@ -2,7 +2,7 @@ package oop_6.data;
 
 import java.time.LocalDate;
 
-public class User {
+public class User extends Entity {
     private String firstName;
     private String secondName;
     private String patronymic;
@@ -49,7 +49,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "User {" +
                 "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", patronymic='" + patronymic + '\'' +
