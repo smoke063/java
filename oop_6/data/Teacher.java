@@ -5,18 +5,25 @@ import java.util.Comparator;
 
 public class Teacher extends User {
 
-    private Long teacherId;
-
     public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
         super(firstName, secondName, patronymic, dateOfBirth);
     }
 
     public Long getTeacherId() {
-        return teacherId;
+        return this.getId();
     }
 
     public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
+        this.setId(teacherId);
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId='" + this.getId() + '\'' +
+                // Можно просто вызвать метод родителя принцип DRY
+                super.toString() +
+                '}';
     }
 
     public static class TeacherComparator implements Comparator {
