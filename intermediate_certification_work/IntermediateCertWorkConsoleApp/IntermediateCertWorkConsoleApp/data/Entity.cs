@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class Entity
+public abstract class Entity
 {
 
     protected Guid Id { get; set; }
