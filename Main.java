@@ -1,10 +1,11 @@
-import Exceptions.SecondHW;
+import Exceptions.ThirdHW.MainExceptionTask;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        SecondHW.Task4();
+        MainExceptionTask task = new MainExceptionTask();
+        task.Run();
     }
 }
